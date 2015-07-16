@@ -612,3 +612,7 @@ var QRCode;
 	 */
 	QRCode.CorrectLevel = QRErrorCorrectLevel;
 })();
+
+if (module && module.exports) {
+  module.exports = QRCode;
+}
