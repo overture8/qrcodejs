@@ -275,8 +275,8 @@ var QRCode;
 	})() : (function () { // Drawing in Canvas
 		function _onMakeImage() {
 			this._elImage.src = this._elCanvas.toDataURL("image/png");
-			this._elImage.style.display = "block";
-			this._elCanvas.style.display = "none";			
+			this._elImage.style.setProperty("display", "block", "important");
+			this._elCanvas.style.setProperty("display", "none", "important");
 		}
 		
 		// Android 2.1 bug workaround
@@ -363,7 +363,7 @@ var QRCode;
 			this._bIsPainted = false;
 			this._elImage = document.createElement("img");
 			this._elImage.alt = "Scan me!";
-			this._elImage.style.display = "none";
+			this._elImage.style.setProperty("display", "none", "important");
 			this._el.appendChild(this._elImage);
 			this._bSupportDataURI = null;
 		};
@@ -384,7 +384,7 @@ var QRCode;
 			var nRoundedWidth = Math.round(nWidth);
 			var nRoundedHeight = Math.round(nHeight);
 
-			_elImage.style.display = "none";
+			_elImage.style.setProperty("display", "none", "important");
 			this.clear();
 			
 			for (var row = 0; row < nCount; row++) {
